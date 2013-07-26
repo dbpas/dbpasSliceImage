@@ -56,5 +56,30 @@ Just slice it...
   ...
 </body>
 ```
-
+####With Callback
+Slice it and do something with it...
+```html
+<head>
+  ...
+  <script>
+    $(document).ready(function() {
+      $('img').dbpasSliceImage({'slices':4, 'onComplete': function() {
+        $('[data-sliced-image="' + $(this).attr('id') + '"] span').animate({'custom': 5}, {duration: 1000, easing: 'linear',
+          step: function(now, fx) {
+            if (fx.pos < 0.25) {
+              $(this).css({'transform': 'scale(' + (1 - fx.pos) + ')'});
+            }
+          }
+				});
+      }});
+    });
+  </script>
+  ...
+</head>
+<body>
+  ...
+  <img src="http://lorempixel.com/300/300/animals" alt="image 1" width="300" height="300" />
+  ...
+</body>
+```
 ###Tips
