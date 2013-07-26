@@ -32,7 +32,7 @@ This plugin will slice the `img` element into separate pieces.
 |`imageHeight`  |Height of image.                                                                         |`int`     |null    |
 |`onComplete`   |callback function                                                                        |`function`|null    |
 ####Special
-If you need to remove the plugin from your page, use `destroy`.
+If you need to remove the plugin from your page, use `destroy`. You will need to use the `[data-sliced-image]` attribute to select the element due to the original `img` element being removed.
 ```javascript
 $('[data-sliced-image]').dbpasSliceImage('destroy');
 ```
@@ -104,3 +104,5 @@ Wait till image load, then slice it...
 ```
 ###Tips
 - No image after slice, make sure the image's width and height has been declared in ANY of the following ways; the `img` tag, the plugin's options or put the plugin inside the image's `onload` event.
+- Need to slice multiple images and manipulate them differently, give the `img` element an `id`.
+- To select the slices in CSS or JavaScript, use the `[data-sliced-image]` attribute.
