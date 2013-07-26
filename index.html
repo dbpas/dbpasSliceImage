@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
     <style>
-      #main_content div {
+      [data-sliced-image] {
         float: left;
       }
       [data-sliced-image="image-1"] span, [data-sliced-image="image-3"] span {
@@ -36,9 +36,29 @@
         }});
         
         $('#image-3').on('load', function() {
-          $(this).dbpasSliceImage({'slices':4});
+          $(this).dbpasSliceImage({'slices':6});
         });
-      
+        
+        $('#destroy').on('click', function() {
+          $('#image-1, #image-2, #image-3').dbpasSliceImage('destroy');
+        });
+        
+        $('#slice').on('click', function() {
+          $('#image-4').dbpasSliceImage({'slices':4, 'onComplete': function() {
+            $('[data-sliced-image="' + $(this).attr('id') + '"] span').animate({'custom': 5}, {duration: 1000, easing: 'linear',
+              step: function(now, fx) {
+                if (fx.pos < 0.25) {
+                  $(this).css({'transform': 'scale(' + (1 - fx.pos) + ')'});
+                }
+              }  
+            });
+          }});
+        });
+        
+        $('#glue').on('click', function() {
+          $('#image-4').dbpasSliceImage('destroy');
+        });
+        
       });
     </script>
   </head>
@@ -61,9 +81,17 @@
         <hr>
 
         <section id="main_content">
-          <img id="image-1" src="http://lorempixel.com/200/200/abstract" alt="image 1" width="200" height="200" />
-          <img id="image-2" src="http://lorempixel.com/200/200/animals" alt="image 2" width="200" height="200" />
-          <img id="image-3" src="http://lorempixel.com/200/200/nature" alt="image 3" />
+          <div>
+            <img id="image-1" src="http://lorempixel.com/200/200/abstract" alt="image 1" width="200" height="200" />
+            <img id="image-2" src="http://lorempixel.com/200/200/animals" alt="image 2" width="200" height="200" />
+            <img id="image-3" src="http://lorempixel.com/200/200/nature" alt="image 3" />
+            <button id="destroy">Destroy</button>
+          </div>
+          <div>
+            <img id="image-4" src="http://lorempixel.com/200/200/people" alt="image 4" width="200" height="200" />
+            <button id="slice">Slice</button>
+            <button id="glue">Glue</button>
+          </div>
         </section>
 
         <footer>
