@@ -38,5 +38,23 @@ $('img').dbpasSliceImage('destroy');
 ```
 
 ###Usage
+####Simple
+Place your images into the `li` elements.
+```html
+<head>
+  ...
+  <script>
+    $(document).ready(function() {
+      $('img').dbpasSliceImage({'slices':4});
+    });
+  </script>
+  ...
+</head>
+<body>
+  ...
+  <img src="http://lorempixel.com/300/300/abstract" alt="image 1" width="300" height="300" />
+  ...
+</body>
+```
 
 ###Tips
