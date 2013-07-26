@@ -39,7 +39,7 @@ $('img').dbpasSliceImage('destroy');
 
 ###Usage
 ####Simple
-Place your images into the `li` elements.
+Just slice it...
 ```html
 <head>
   ...
