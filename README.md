@@ -82,4 +82,24 @@ Slice it and do something with it...
   ...
 </body>
 ```
+####On Image Load
+Wait till image load, then slice it...
+```html
+<head>
+  ...
+  <script>
+    $(document).ready(function() {
+      $('img').on('load', function() {
+        $(this).dbpasSliceImage({'slices':4});
+      });
+    });
+  </script>
+  ...
+</head>
+<body>
+  ...
+  <img src="http://lorempixel.com/300/300/nature" alt="image 1" />
+  ...
+</body>
+```
 ###Tips
