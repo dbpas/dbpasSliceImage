@@ -12,7 +12,7 @@
         text-align: center;
       }
       #main_content {
-        height: 600px;
+        height: 500px;
       }
       [data-sliced-image] {
         float: left;
@@ -61,10 +61,6 @@
           }});
         });
         
-        $('#glue').on('click', function() {
-          $('[data-sliced-image="image-4"]').dbpasSliceImage('destroy');
-        });
-        
       });
     </script>
   </head>
@@ -95,7 +91,7 @@
             <br />
           </div>
           <div>
-            <button id="slice">Slice</button><button id="glue">Glue</button><br />
+            <button id="slice">Slice</button><br />
             <img id="image-4" src="http://lorempixel.com/200/200/people" alt="image 4" width="200" height="200" />
             <br />
           </div>
