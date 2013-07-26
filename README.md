@@ -103,4 +103,4 @@ Wait till image load, then slice it...
 </body>
 ```
 ###Tips
-- No image after slice, make sure the image's width and height has been declared in any of the following ways; the `img` tag, the plugin's options or put the plugin inside the image load event.
+- No image after slice, make sure the image's width and height has been declared in any of the following ways; the `img` tag, the plugin's options or put the plugin inside the image's on load event.
