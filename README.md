@@ -104,5 +104,5 @@ Wait till image load, then slice it...
 ```
 ###Tips
 - No image after slice, make sure the image's width and height has been declared in ANY of the following ways; the `img` tag, the plugin's options or put the plugin inside the image's `onload` event.
-- Need to slice multiple images and manipulate them differently, give the `img` element an `id`.
+- Need to slice multiple images and manipulate them differently, give the `img` element an `id` or `class`.
 - To select the slices in CSS or JavaScript, use the `[data-sliced-image]` attribute.
