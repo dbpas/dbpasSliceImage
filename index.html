@@ -40,7 +40,7 @@
         });
         
         $('#destroy').on('click', function() {
-          $('#image-1, #image-2, #image-3').dbpasSliceImage('destroy');
+          $('[data-sliced-image="image-1"], [data-sliced-image="image-2"], [data-sliced-image="image-3"]').dbpasSliceImage('destroy');
         });
         
         $('#slice').on('click', function() {
@@ -56,7 +56,7 @@
         });
         
         $('#glue').on('click', function() {
-          $('#image-4').dbpasSliceImage('destroy');
+          $('[data-sliced-image="image-4"]').dbpasSliceImage('destroy');
         });
         
       });
@@ -92,6 +92,7 @@
             <button id="slice">Slice</button>
             <button id="glue">Glue</button>
           </div>
+          <br style="clear:both" />
         </section>
 
         <footer>
