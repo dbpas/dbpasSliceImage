@@ -70,7 +70,7 @@ Slice it and do something with it...
               $(this).css({'transform': 'scale(' + (1 - fx.pos) + ')'});
             }
           }
-				});
+	});
       }});
     });
   </script>
