@@ -8,7 +8,9 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
     <style>
-      
+      #main_content div {
+        float: left;
+      }
     </style>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -19,6 +21,16 @@
     <script>
       $(document).ready(function() {
         $('#image-1').dbpasSliceImage({'slices':4});
+        
+        $('#image-2').dbpasSliceImage({'slices':4, 'onComplete': function() {
+          $('[data-sliced-image="' + $(this).attr('id') + '"] span').animate({'custom': 5}, {duration: 1000, easing: 'linear',
+            step: function(now, fx) {
+              if (fx.pos < 0.25) {
+                $(this).css({'transform': 'scale(' + (1 - fx.pos) + ')'});
+              }
+            }
+          });
+        }});
       });
     </script>
   </head>
@@ -41,9 +53,9 @@
         <hr>
 
         <section id="main_content">
-          <p>
-            <img id="image-1" src="http://lorempixel.com/300/300/abstract" alt="image 1" width="300" height="300" />
-          </p>
+          <img id="image-1" src="http://lorempixel.com/200/200/abstract" alt="image 1" width="200" height="200" />
+          <img id="image-2" src="http://lorempixel.com/200/200/animals" alt="image 2" width="200" height="200" />
+          <img id="image-3" src="http://lorempixel.com/200/200/nature" alt="image 3" />
         </section>
 
         <footer>
