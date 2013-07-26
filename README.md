@@ -34,7 +34,7 @@ This plugin will slice the `img` element into separate pieces.
 ####Special
 If you need to remove the plugin from your page, use `destroy`.
 ```javascript
-$('img').dbpasSliceImage('destroy');
+$('[data-sliced-image]').dbpasSliceImage('destroy');
 ```
 
 ###Usage
