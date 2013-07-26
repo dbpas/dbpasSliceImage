@@ -9,7 +9,7 @@
 
 //polyfill, object.create
 if (!Object.create) {
-  Object.create = (function(){
+	Object.create = (function(){
 		function F(){}
 		return function(o){
 			if (arguments.length != 1) {
@@ -26,7 +26,7 @@ if (!Object.create) {
 	
 	function destroy(elem) {
 		var $elem = $(elem),
-				$data = $(elem).data('dbpasSliceImage');                           //get jquery data
+			$data = $(elem).data('dbpasSliceImage');                             //get jquery data
 		
 		if ($data) {
 			$elem.replaceWith($data.elem);                                       //insert old element
@@ -50,7 +50,7 @@ if (!Object.create) {
 			self.sliceWidth = self.imageWidth / self.options.slices;
 			self.sliceHeight = self.imageHeight;
 			self.imageSrc = 'url("' + self.$elem.attr('src') + '")';
-			self.$newElem = $('<div />').attr('data-sliced-image', self.$elem.attr('id') || '');
+			self.$newElem = $('<div />').attr('data-sliced-image', self.$elem.attr('id') || ''); //div to hold slices and replace original image
 			self.backgroundPos = null;
 			
 			self.doSlice();
