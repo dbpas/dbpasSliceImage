@@ -27,7 +27,7 @@ This plugin will slice the `img` element into separate pieces.
 ####Default
 |Option         |Description                                                                              |Type      |Default |
 |---------------|-----------------------------------------------------------------------------------------|----------|--------|
-|`slices`       |Number of slices.                                                                        |`int`     |2        |
+|`slices`       |Number of slices.                                                                        |`int`     |4         |
 |`imageWidth`   |Width of image.                                                                          |`int`     |null    |
 |`imageHeight`  |Height of image.                                                                         |`int`     |null    |
 |`onComplete`   |callback function                                                                        |`function`|null    |
